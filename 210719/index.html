@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Excercise</title>
+        <link rel="stylesheet" type="text/css" href="./assets/styles.css">
+
+    </head>
+    <body>
+
+        <div class="nav-bar"></div>
+        <div id="app">
+<!--            <div class="product">-->
+<!--                <div class="product-image">-->
+<!--                    <img v-bind:src="image">-->
+<!--                </div>-->
+
+<!--                <div class="product-info">-->
+<!--                    <h1>{{ title }}</h1>-->
+<!--                    <p v-if="inventory>10">In Stock</p>-->
+<!--                    <p v-else-if="inventory>0">Almost sold out!</p>-->
+<!--                    <p v-else>Out of Stock</p>-->
+
+<!--                    <ul>-->
+<!--                        <li v-for="detail in details">{{ detail.text }}</li>-->
+<!--                    </ul>-->
+<!--                    <div v-for="(variant, index) in variants" :key="variant.variantId"-->
+<!--                    class="color-box" :style="{backgroundColor : variant.variantColor}"-->
+<!--                         @mouseover="updateProduct(index)">-->
+<!--                        <p >{{ variant.variantColor }}</p>-->
+<!--                    </div>-->
+
+<!--                    <button @click="addToCart"-->
+<!--                    :disabled="!inStock"-->
+<!--                    :class="{disabledButton:!inStock}">Add to Cart</button>-->
+<!--                    <div class="cart">-->
+<!--                        <p>Cart {{ cart }}</p>-->
+<!--                    </div>-->
+
+
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+
+            <div class="cart">
+                <p>Cart({{cart.length}})</p>
+            </div>
+            <product @add-to-cart="updateAddToCart"></product>
+
+
+
+
+
+        </div>
+
+
+
+
+
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="./main.js"></script>
+    </body>
+</html>
