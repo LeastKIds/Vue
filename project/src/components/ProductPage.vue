@@ -5,15 +5,17 @@
       <p>Cart({{ cart.length }}</p>
     </div>
     <Product></Product>
+    <Reply></Reply>
   </div>
 </template>
 
 <script>
 import Product from './Product.vue';
+import Reply from "./reply";
 export default {
   name: "ProductPage",
   components : {
-    Product
+    Product, Reply
   },
   data() {
     return { cart : [] }
