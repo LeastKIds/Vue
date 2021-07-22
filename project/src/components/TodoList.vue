@@ -35,6 +35,7 @@ export default {
           text : trimmedText,
           do : '안 함',
           check : false,
+          date : null,
 
         });
         this.newTodoText='';
@@ -49,9 +50,11 @@ export default {
     changeTodo (todoId) {
       if(this.todos[todoId-1].check === false) {
         this.todos[todoId-1].check = true;
+        this.todos[todoId-1].date=new Date();
          this.todos[todoId-1].do = '함';
       } else {
         this.todos[todoId-1].check = false;
+        this.todos[todoId-1].date='';
          this.todos[todoId-1].do= '안 함';
       }
 
