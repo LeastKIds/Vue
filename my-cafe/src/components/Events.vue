@@ -3,10 +3,13 @@
     <h1>Events</h1>
     <h1>{{ event_title }}</h1>
     <h1>{{ searched_event }}</h1>
+    <input type="text" name="name" v-model="name">
+    <button @click="onSubmit">send</button>
   </div>
 </template>
 
 <script>
+import axios from 'axios';
 export default {
   name: "Events",
   props: ['event_id', 'query_id'],
@@ -24,6 +27,25 @@ export default {
       else
         return '123';
 
+    }
+  },
+  data() {
+    return {
+      name : ''
+    }
+  },
+  methods : {
+    onSubmit() {
+      var dataform = new FormData();
+      dataform.append('name', this.name);
+
+      axios.post('http://localhost:8000/voca/word/store', dataform)
+        .then(response => {
+          console.log(response);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     }
   }
 }

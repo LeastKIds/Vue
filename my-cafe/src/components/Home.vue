@@ -4,12 +4,24 @@
     <input v-model="newId" type="text"><button @click="saveUserId">Save</button>
     <button @click="updateReviews">Update</button>
     <h1>{{ reviewCount }}</h1>
-    <ul>
-      <li v-for="r in reviews" :key="r.id">
-        <p>{{ r.body }}</p>
-      </li>
-    </ul>
+    <v-simple-table>
+      <template v-slot:default>
+        <thead>
+        <tr>
+          <th>Email</th>
+          <th>Comment</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr v-for="r in reviews" :key="r.id">
+          <td>{{ r.name }}</td>
+          <td>{{ r.body }}</td>
+        </tr>
+        </tbody>
+      </template>
+    </v-simple-table>
   </div>
+
 </template>
 
 <script>

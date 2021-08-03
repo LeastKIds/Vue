@@ -7,7 +7,18 @@ module.exports = {
                 pathRewrite : {
                     '^/api' : ''
                 }
+            },
+            '/aw' : {
+                target : 'http://localhost:8000/',
+                changeOrigin : true,
+                pathRewrite : {
+                    '^/aw' : ''
+                }
             }
         }
-    }
+    },
+
+    transpileDependencies: [
+      'vuetify'
+    ]
 }
