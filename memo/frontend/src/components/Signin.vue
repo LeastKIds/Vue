@@ -1,7 +1,11 @@
 <template>
   <div
-  style="margin-top : 20%;">
+  class="mt-5">
     <center>
+
+    <img
+        :src="require('@/assets/images/LoGo.png')"
+        class="mb-5"/>
 
     <v-col
     cols="12"
@@ -126,6 +130,10 @@ export default {
   to {
     transform: rotate(360deg);
   }
+}
+
+.MeMO {
+  text-align: center;
 }
 
 </style>

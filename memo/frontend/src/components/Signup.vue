@@ -1,12 +1,59 @@
 <template>
 <div>
-  <p>회원가입</p>
-  <input type="text" name="email" placeholder="email" v-model="r_email"> <br>
-  <input type="text" name="name" placeholder="name" v-model="r_name"> <br>
-  <input type="password" name="password" placeholder="password" v-model="r_pwd"> <br>
-  <button @click="registerButton">회원가입</button>
-  <br><br>
-  <p><i>{{message}}</i></p>
+  <center>
+
+    <img
+        :src="require('@/assets/images/register.png')"
+        width="100px"
+        class="mb-5 mt-15"/>
+    <v-col
+        cols="12"
+        sm="6">
+      <v-text-field
+          label="아이디"
+          :rules="rules"
+          hide-details="auto"
+          v-model="r_email"
+      ></v-text-field>
+      <v-text-field
+          label="이름"
+          :rules="rules"
+          hide-details="auto"
+          v-model="r_name"
+      ></v-text-field>
+      <v-text-field
+          v-model="r_pwd"
+          :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
+          :rules="rules"
+          :type="show1 ? 'text' : 'password'"
+          name="input-10-1"
+          label="비밀번호"
+          hint="정확하게 입력"
+          counter
+          @click:append="show1 = !show1"
+      ></v-text-field>
+
+
+      <v-btn
+          class="ma-2"
+          color="warning"
+          style="display: inline"
+          @click="registerButton"
+      >
+        회원가입
+      </v-btn>
+
+      <v-alert
+          type="warning"
+          dismissible
+          v-if="message"
+          class="mt-10"
+      >{{message}}</v-alert>
+
+    </v-col>
+
+
+  </center>
 </div>
 </template>
 
@@ -20,6 +67,15 @@ export default {
       r_name : '',
       r_pwd : '',
       message : '',
+
+      rules: [
+        value => !!value || 'Required.',
+      ],
+      show1: false,
+      show2: true,
+      show3: false,
+      show4: false,
+
     }
   },
   methods: {
@@ -34,12 +90,6 @@ export default {
         'password' : this.r_pwd
       };
 
-      // this.$store.dispatch('register',data)
-      //   .then( () => {
-      //     this.$router.push('/');
-      //   }).catch( (err) => {
-      //     console.log(err);
-      // });
 
       axios.post('/api/users', data)
           .then(response => {
