@@ -26,5 +26,18 @@ export default {
             url : '/api/memos/' + memoId,
             method : 'delete'
         })
+    },
+    updateMemo(memoId, data) {
+        return sendMultipart({
+            url : '/api/memos/' + memoId,
+            method : 'put',
+            data : data
+        })
+    },
+    leaveAuth(userid) {
+        return sendRequest({
+            url : '/api/users/' + userid,
+            method : 'delete'
+        })
     }
 }

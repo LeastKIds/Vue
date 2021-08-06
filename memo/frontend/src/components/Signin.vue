@@ -6,7 +6,12 @@
     <br><br>
     <router-link :to="`/signup`">회원가입</router-link>
     <br><br>
-    <p><i>{{message}}</i></p>
+    <v-alert
+        type="warning"
+        dismissible
+        v-if="message"
+    >{{message}}</v-alert>
+<!--    <p><i>{{message}}</i></p>-->
   </div>
 </template>
 

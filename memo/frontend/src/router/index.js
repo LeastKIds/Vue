@@ -5,6 +5,7 @@ import Signin from '@/components/Signin';
 import Signup from '@/components/Signup';
 import Add from '@/components/AddMemo';
 import Read from '@/components/ReadMemo';
+import Update from '@/components/UpdateMemo';
 
 Vue.use(VueRouter)
 
@@ -36,6 +37,12 @@ const routes = [
     name : 'Read',
     component: Read,
     meta : {requiresAuth : true},
+  },
+  {
+    path : '/memos/update/:memoId',
+    name : 'Update',
+    component: Update,
+    meta : {requiresAuth : true}
   }
 
 ]

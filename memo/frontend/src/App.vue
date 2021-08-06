@@ -7,23 +7,25 @@
     >
       <div class="d-flex align-center">
         <router-link :to="`/`">
-          <v-img
-              alt="Vuetify Logo"
-              class="shrink mr-2"
-              contain
-              src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-              transition="scale-transition"
-              width="40"
-          />
-          홈으로 가자
-          <v-img
-              alt="Vuetify Name"
-              class="shrink mt-1 hidden-sm-and-down"
-              contain
-              min-width="100"
-              src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-              width="100"
-          />
+<!--          <v-img-->
+<!--              alt="Vuetify Logo"-->
+<!--              class="shrink mr-2"-->
+<!--              contain-->
+<!--              src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"-->
+<!--              transition="scale-transition"-->
+<!--              width="40"-->
+<!--          />-->
+<!--          <v-img-->
+<!--              class="shrink mt-1 hidden-sm-and-down"-->
+<!--              contain-->
+<!--              min-width="100"-->
+<!--              src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"-->
+<!--              width="100"-->
+<!--          />-->
+          <v-banner
+              class="shrink mt-1 hidden-sm-and-down">
+            메모장
+          </v-banner>
         </router-link>
 
       </div>
