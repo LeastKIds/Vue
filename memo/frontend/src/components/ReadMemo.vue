@@ -90,27 +90,22 @@
 
 
       </v-col>
+      <p >저장 시간 : {{memo.savedTime}}</p>
 
 
-
-
-
-      <p>저장 시간 : {{memo.savedTime}}</p>
-
-      <br><br>
-      <center>
         <v-btn
             color="primary"
             dark
-            class="ma-5"
+            class="mr-5 mb-10"
             @click="updateMemo"
+            style="display:inline"
         >
           수정
         </v-btn>
-      </center>
 
 
-      <v-row justify="center">
+
+      <v-row justify="center" style="display:inline">
         <v-dialog v-model="dialog" persistent max-width="290">
           <template v-slot:activator="{ on, attrs }">
             <v-btn
@@ -118,6 +113,7 @@
                 dark
                 v-bind="attrs"
                 v-on="on"
+                class="ml-5 mb-10"
             >
               삭제
             </v-btn>
@@ -133,6 +129,8 @@
           </v-card>
         </v-dialog>
       </v-row>
+
+
     </center>
 
   </div>
@@ -198,5 +196,7 @@ export default {
 </script>
 
 <style scoped>
-
+  p {
+    opacity: 0.2;
+  }
 </style>
