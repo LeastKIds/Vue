@@ -1,11 +1,5 @@
 <template>
   <div>
-    <input type="text" name="title" width="50%" placeholder="title" v-model="title"><br>
-    <input type="text" name="content" width="50%" placeholder="content" v-model="content"><br>
-    <br>
-    <input type="submit" @click="addMemo" name="send" value="send">
-
-
 
 
     <center>
