@@ -19,7 +19,7 @@
             class="mx-auto"
             max-width="344"
             outlined
-            to="`/memos/${memo.memoid}`"
+            @click="move(memo.memoid)"
             width = 280px
         >
           <v-list-item three-line>
@@ -74,6 +74,10 @@ export default {
         }).catch( () => {
 
       });
+    },
+    move(memoid) {
+      const url = '/memos/' + memoid;
+      this.$router.push(url);
     }
   }
 
